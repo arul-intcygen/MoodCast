@@ -46,7 +46,7 @@ Ikuti langkah-langkah ini untuk menjalankan proyek di mesin lokalmu:
 
 1. **Clone Repositori**
 ```bash
-git clone https://github.com/username-kamu/moodcast.git
+git clone https://github.com/arul-intcygen/moodcast.git
 cd moodcast
 
 ```

@@ -5,7 +5,7 @@ import { useBook } from './hooks/useBook'; // Import mesin buku
 import BookFinder from './components/BookFinder'; // Import tampilan buku
 
 function App() {
-  const apiKey = "17661524dfbaf98af9191769f07643e7";
+  const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
   const { city, setCity, weather, loading, error, fetchWeather } = useWeather(apiKey);
   const { book, fetchRandomBook, loading: bookLoading } = useBook(); 
 

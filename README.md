@@ -1,16 +1,80 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# MoodCast 🌦️📚
 
-Currently, two official plugins are available:
+**MoodCast** adalah aplikasi web berbasis React yang memberikan rekomendasi aktivitas cerdas berdasarkan kondisi cuaca real-time. Proyek ini menggabungkan data cuaca dari OpenWeather API dengan kurasi buku dari Open Library API untuk menciptakan pengalaman pengguna yang personal.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> **[PLACEHOLDER: Masukkan Gambar Banner atau Logo Aplikasi di Sini]**
+> `![MoodCast Banner](https://link-ke-gambar-kamu.png)`
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Fitur Utama
 
-## Expanding the ESLint configuration
+* **Real-time Weather:** Cek kondisi cuaca di kota mana pun (Default: South Tangerang).
+* **Dynamic Suggestion:** Memberikan saran aktivitas unik sesuai deskripsi cuaca.
+* **BookFinder (Rainy Mode):** Fitur otomatis yang muncul hanya saat hujan untuk memberikan rekomendasi buku acak agar waktu luangmu tetap produktif.
+* **External Library Access:** Tombol pintas menuju Z-Library untuk mencari referensi bacaan lebih lanjut.
+* **Glassmorphism UI:** Antarmuka modern dan transparan yang nyaman di mata.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📸 Screenshots
+
+### Tampilan Utama (Cerah/Berawan)
+
+> **[PLACEHOLDER: Screenshot saat cuaca cerah/berawan]**
+> `![Main Display](https://link-ke-screenshot-1.png)`
+
+### Fitur BookFinder (Saat Hujan)
+
+> **[PLACEHOLDER: Screenshot saat cuaca hujan dan BookFinder muncul]**
+> `![BookFinder Feature](https://link-ke-screenshot-2.png)`
+
+---
+
+## 🛠️ Tech Stack
+
+* **Frontend:** React.js
+* **Styling:** CSS3 (Glassmorphism)
+* **APIs:** * [OpenWeatherMap](https://openweathermap.org/) (Weather Data)
+* [Open Library](https://openlibrary.org/developers/api) (Book Data)
+
+
+* **Environment:** Arch Linux
+
+---
+
+## 🚀 Instalasi & Persiapan
+
+Ikuti langkah-langkah ini untuk menjalankan proyek di mesin lokalmu:
+
+1. **Clone Repositori**
+```bash
+git clone https://github.com/username-kamu/moodcast.git
+cd moodcast
+
+```
+
+
+2. **Instal Dependensi**
+Pastikan kamu sudah menginstal Node.js dan npm.
+```bash
+npm install
+
+```
+
+
+3. **Konfigurasi API Key**
+Buat file `.env` di root folder dan masukkan API Key OpenWeather kamu:
+```env
+VITE_WEATHER_API_KEY=(API-KEY)
+
+```
+
+
+4. **Jalankan Aplikasi**
+```bash
+npm run dev
+
+```
+

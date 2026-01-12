@@ -1,0 +1,32 @@
+import React, { useState } from "react";
+import "./App.css";
+
+function App() {
+  const [city, setCity] = useState("");
+
+  return (
+    <div className="container">
+      <div className="glass-card">
+        <h1>MoodCast</h1>
+        <p>Aplikasi Rekomendasi Aktivitas Berdasarkan Cuaca</p>
+
+        <div className="search-box">
+          <input
+            type="text"
+            placeholder="Ketik nama kota..."
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+          />
+          <button>Cek Cuaca</button>
+        </div>
+
+        <div className="info">
+          <h2>Tangerang Selatan</h2>
+          <p>Status: Menunggu Input...</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default App;

@@ -1,0 +1,292 @@
+:root {
+  --primary: #6366f1;
+  --accent: #f43f5e;
+  --glass: rgba(255, 255, 255, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0f172a; /* Dark Navy */
+  overflow: hidden;
+  position: relative;
+  padding: 20px;
+}
+
+/* Lingkaran Gradasi di Background */
+.background-shapes .shape {
+  position: absolute;
+  filter: blur(80px);
+  z-index: 0;
+  border-radius: 50%;
+}
+
+.circle1 {
+  width: 300px;
+  height: 300px;
+  background: var(--primary);
+  top: -50px;
+  right: -50px;
+  opacity: 0.5;
+}
+
+.circle2 {
+  width: 400px;
+  height: 400px;
+  background: var(--accent);
+  bottom: -100px;
+  left: -100px;
+  opacity: 0.3;
+}
+
+/* Glassmorphism Card */
+.glass-card {
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  padding: 40px;
+  width: 100%;
+  max-width: 480px;
+  color: white;
+  z-index: 1;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.brand {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.brand span { color: var(--accent); }
+
+.tagline {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-bottom: 30px;
+}
+
+/* Search Bar */
+.search-section {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 14px 20px;
+  border-radius: 15px;
+  color: white;
+  outline: none;
+}
+
+input::placeholder { color: rgba(255, 255, 255, 0.5); }
+
+.btn-search {
+  background: white;
+  color: #0f172a;
+  border: none;
+  padding: 0 25px;
+  border-radius: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-search:hover { transform: scale(1.05); background: var(--accent); color: white; }
+
+/* Weather Info */
+.main-info { margin-bottom: 30px; }
+
+.location { font-size: 1.5rem; opacity: 0.9; }
+
+.temp {
+  font-size: 5rem;
+  font-weight: 800;
+  margin: 10px 0;
+  background: linear-gradient(to bottom, #ffffff, #94a3b8);
+  
+  /* Tambahkan baris-baris ini */
+  background-clip: text;          /* Versi Standar */
+  -webkit-background-clip: text;  /* Versi Webkit (Chrome/Safari/Edge) */
+  -webkit-text-fill-color: transparent; /* Agar warna background terlihat menembus teks */
+  color: transparent;             /* Fallback jika -webkit-text-fill-color tidak didukung */
+}
+
+.description {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.stat-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 20px;
+}
+
+.stat-item span { font-size: 0.7rem; opacity: 0.6; text-transform: uppercase; }
+
+.stat-item p { font-weight: 700; font-size: 1.1rem; margin-top: 5px; }
+
+.divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 30px 0;
+}
+
+.recommendation h3 {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  color: var(--accent);
+}
+
+.recommendation p {
+  font-style: italic;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .glass-card {
+    /* Mengurangi padding agar konten punya lebih banyak ruang */
+    padding: 30px; 
+    max-width: 95%; /* Sedikit melonggarkan batas maksimal */
+  }
+
+  .temp {
+    font-size: 4.5rem; /* Mengecilkan ukuran font suhu */
+  }
+}
+
+/* Untuk HP Layar Standar & Kecil (di bawah 480px - FOKUS UTAMA KITA) */
+@media (max-width: 480px) {
+  .container {
+    /* Mengurangi jarak antara tepi layar HP dengan kartu */
+    padding: 10px;
+  }
+
+  .glass-card {
+    /* Padding dalam kartu dikecilkan drastis agar tidak sempit */
+    padding: 20px;
+    border-radius: 20px; /* Menyesuaikan sudut agar proporsional */
+  }
+
+  /* Judul Aplikasi */
+  .brand {
+    font-size: 1.8rem;
+  }
+  .tagline {
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+  }
+
+  /* --- PERBAIKAN PENTING: SEARCH BAR --- */
+  /* Ini yang mengatasi masalah tombol pencarian yang terpotong/gepeng */
+  .search-section {
+    /* Ubah dari jejer samping menjadi tumpuk atas-bawah */
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  input, .btn-search {
+    /* Paksa input dan tombol agar selebar kartu */
+    width: 100%;
+    padding: 12px; /* Sesuaikan padding agar tidak terlalu tebal di HP */
+  }
+  
+  .btn-search:hover {
+      /* Matikan efek perbesar di HP karena tidak relevan dengan layar sentuh */
+      transform: none; 
+  }
+
+  /* --- Info Cuaca --- */
+  .location {
+    font-size: 1.3rem;
+  }
+  
+  .temp {
+    /* Ukuran suhu lebih kecil lagi agar muat */
+    font-size: 3.5rem;
+    margin: 5px 0;
+  }
+
+  .description {
+    font-size: 0.75rem;
+  }
+
+  /* Kotak Statistik (Humidity & Wind) */
+  .stats-grid {
+    gap: 10px; /* Jarak antar kotak lebih rapat */
+  }
+  
+  .stat-item {
+      padding: 10px; /* Isi kotak lebih kecil */
+  }
+
+  /* Rekomendasi */
+  .recommendation p {
+    font-size: 0.9rem; /* Ukuran teks saran sedikit diperkecil */
+  }
+}
+
+.action-card {
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 15px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.action-label {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-bottom: 10px;
+}
+
+.book-result {
+  margin-bottom: 15px;
+  animation: fadeIn 0.5s ease;
+}
+
+.book-result h4 { font-size: 1rem; color: #f43f5e; }
+
+.btn-book {
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  background: white;
+  color: #0f172a;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
